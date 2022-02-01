@@ -1,0 +1,22 @@
+docker-compose up -d
+docker-compose logs kafka | grep -i started
+
+ docker exec -it kafka-exemplos_kafka_1 bash - entrar no Bash do conteiner! basico de docker relembrar
+
+Criar um Topico com 3 partições
+ kafka-topics --create --topic=exemplo --bootstrap-server=localhost:9092 --partitions=3
+
+Producer
+ kafka-console-producer --topic=exemplo --bootstrap-server=localhost:9092 
+
+ Consumer
+ kafka-console-consumer --topic=exemplo --bootstrap-server=localhost:9092 
+
+ KKSKJDKSJ O engraçado é que quando vc produz algo, realmente o sonsumer ja estar pronto lendo e recebendo o que vc escreve!
+ Amei amei 
+
+consume a partir de um Grupo.
+ kafka-console-consumer --topic=exemplo --bootstrap-server=localhost:9092 --group=x
+>>--- Como o Topico criado tem 3 partições, quando produzimos algo para esse topico, ele cai em umas das partições, 
+Se colocarmos para ficar escutando em 3 abas, a gente ver que fica tipo como se fosse um loadbalance, chega em um, e em outro nao
+bla bla bla! Achei interessante! kkakakakka
