@@ -12,8 +12,8 @@ import (
 )
 
 const (
-	topic         = "message-log"
-	brokerAddress = "localhost:29002"
+	topic         = "exemplo"
+	brokerAddress = "localhost:29092"
 )
 
 func main() {
@@ -84,3 +84,5 @@ func consume(ctx context.Context) {
 		fmt.Println("received: ", string(msg.Value))
 	}
 }
+
+// Estudar mais sobre Group
